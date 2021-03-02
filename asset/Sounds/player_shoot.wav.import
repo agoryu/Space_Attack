@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/player_shoot.wav-3f64f4296bb58f61da5112e99d19a668.sample"
+
+[deps]
+
+source_file="res://asset/Sounds/player_shoot.wav"
+dest_files=[ "res://.import/player_shoot.wav-3f64f4296bb58f61da5112e99d19a668.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0
