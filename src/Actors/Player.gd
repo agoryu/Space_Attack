@@ -18,6 +18,9 @@ var max_energy : float = 255
 const TIME_SHOOT : float = 0.1
 var shoot_right : bool = true
 
+func _ready():
+	Main.connect("score_updated", self, "calcul_energy")
+
 # Process
 func _process(delta):
 	if Input.is_action_pressed("ui_select") and fireTimer.is_stopped():
@@ -27,6 +30,8 @@ func _process(delta):
 		energy -= sub_energy
 		colorRect.material.set_shader_param("energy", energy/max_energy)
 		energyTimer.start()
+	if energy <= 0:
+		Main.game_over()
 
 # Physic Process
 func _physics_process(delta):
@@ -59,3 +64,6 @@ func shoot():
 
 func _on_Area2D_area_entered(area):
 	Main.game_over()
+	
+func calcul_energy(point):
+	energy += point * 10

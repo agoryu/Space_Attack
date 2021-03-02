@@ -1,6 +1,6 @@
 extends Node2D
 
-signal score_updated
+signal score_updated(point)
 signal game_over
 signal shake_screen
 signal paused
@@ -10,7 +10,7 @@ var paused : bool = false
 
 func set_score(point):
 	score += point
-	emit_signal("score_updated")
+	emit_signal("score_updated", point)
 	
 func game_over():
 	emit_signal("game_over")

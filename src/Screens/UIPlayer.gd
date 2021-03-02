@@ -12,5 +12,5 @@ func startGame():
 	message.text = "Start"
 	animMessage.play("display")
 
-func update_score():
+func update_score(point):
 	score_label.text = "Score: %s" % Main.score
