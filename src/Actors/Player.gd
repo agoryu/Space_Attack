@@ -6,7 +6,7 @@ onready var leftGun := $FiringsPosition/LeftGun
 onready var rightGun := $FiringsPosition/RightGun 
 onready var fireTimer := $FireTimer
 onready var energyTimer := $EnergyTimer
-onready var colorRect := $ColorRect
+onready var sprite := $Sprite
 
 # Ship variables
 var speed : float = 300.0
@@ -28,7 +28,7 @@ func _process(delta):
 		shoot()
 	if energyTimer.is_stopped() and energy > 0:
 		energy -= sub_energy
-		colorRect.material.set_shader_param("energy", energy/max_energy)
+		sprite.material.set_shader_param("energy", energy/max_energy)
 		energyTimer.start()
 	if energy <= 0:
 		Main.game_over()
