@@ -8,10 +8,8 @@ func _process(delta):
 	var score = Main.score
 	if score > 10 and score <= 20:
 		timer.wait_time = 2
-	elif score > 20 and score <= 30:
+	elif score > 20:
 		timer.wait_time = 1
-	elif score > 30:
-		timer.wait_time = 0.5
 
 func _on_MeteorSpawnTimer_timeout():
 	path.offset = randi()

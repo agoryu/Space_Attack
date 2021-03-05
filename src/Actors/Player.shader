@@ -11,7 +11,7 @@ vec3 hsv2rgb(vec3 c)
 
 void fragment() {
 	vec4 color = texture(TEXTURE, UV);
-	if (color.r == 0.0 && color.g == 0.0 && color.b == 0.0 && color.a == 1.0) {
+	if (color.r <= 0.1 && color.g <= 0.1 && color.b <= 0.1 && color.a >= 0.8) {
 		COLOR = vec4(hsv2rgb(vec3(energy/2.0, 0.8, 0.95)), 1.0);
 	} else {
 		COLOR = color;

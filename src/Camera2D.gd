@@ -15,6 +15,10 @@ func _process(delta):
 		)
 	else:
 		offset = Vector2.ZERO
+	if Input.is_action_pressed("ui_right") and offset.x < 50:
+		offset.x += 5
+	if Input.is_action_pressed("ui_left") and offset.x > -50:
+		offset.x -= 5
 
 func begin_shake():
 	timer.start()
