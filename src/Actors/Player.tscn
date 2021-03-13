@@ -7,38 +7,38 @@
 [sub_resource type="CircleShape2D" id=1]
 radius = 136.335
 
-[sub_resource type="ShaderMaterial" id=6]
+[sub_resource type="ShaderMaterial" id=2]
 shader = ExtResource( 3 )
 shader_param/energy = 0.0
-
-[sub_resource type="AtlasTexture" id=2]
-flags = 4
-atlas = ExtResource( 1 )
-region = Rect2( 0, 0, 320, 320 )
 
 [sub_resource type="AtlasTexture" id=3]
 flags = 4
 atlas = ExtResource( 1 )
-region = Rect2( 640, 0, 320, 320 )
+region = Rect2( 0, 0, 320, 320 )
 
 [sub_resource type="AtlasTexture" id=4]
 flags = 4
 atlas = ExtResource( 1 )
+region = Rect2( 640, 0, 320, 320 )
+
+[sub_resource type="AtlasTexture" id=5]
+flags = 4
+atlas = ExtResource( 1 )
 region = Rect2( 320, 0, 320, 320 )
 
-[sub_resource type="SpriteFrames" id=5]
+[sub_resource type="SpriteFrames" id=6]
 animations = [ {
-"frames": [ SubResource( 2 ) ],
+"frames": [ SubResource( 3 ) ],
 "loop": true,
 "name": "left",
 "speed": 5.0
 }, {
-"frames": [ SubResource( 3 ) ],
+"frames": [ SubResource( 4 ) ],
 "loop": true,
 "name": "right",
 "speed": 5.0
 }, {
-"frames": [ SubResource( 4 ) ],
+"frames": [ SubResource( 5 ) ],
 "loop": true,
 "name": "normal",
 "speed": 5.0
@@ -70,8 +70,8 @@ one_shot = true
 one_shot = true
 
 [node name="Sprite" type="AnimatedSprite" parent="."]
-material = SubResource( 6 )
+material = SubResource( 2 )
 scale = Vector2( 0.9, 0.9 )
-frames = SubResource( 5 )
+frames = SubResource( 6 )
 animation = "normal"
 [connection signal="area_entered" from="Area2D" to="." method="_on_Area2D_area_entered"]
