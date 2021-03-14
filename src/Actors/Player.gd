@@ -11,7 +11,7 @@ onready var sprite := $Sprite
 # Ship variables
 var speed : float = 300.0
 var energy : float = 255
-var sub_energy : float = 2
+var sub_energy : float = 3
 var max_energy : float = 255
 
 # Shoot variables
